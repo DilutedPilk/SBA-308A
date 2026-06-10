@@ -28,3 +28,14 @@ button:hover {
     background-color: #DEB841;
     color: #37323E;
 }
+
+#brew_search {
+    display: flex;
+    justify-content: space-between;
+}
+
+#country,
+#city,
+#search {
+    margin: 10px;
+}
