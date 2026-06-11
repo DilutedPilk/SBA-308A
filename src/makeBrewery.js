@@ -1,7 +1,5 @@
-
 export function getNewBrewery() {
-
-
+    
     const title = document.getElementById("add_name")
     const address = document.getElementById("add_address")
     const city = document.getElementById("add_city")

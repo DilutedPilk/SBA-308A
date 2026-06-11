@@ -25,8 +25,10 @@ async function getBreweries(city, page) {
     }
 }
 
+
+//This function doesnt work as the API does not allow the POSt method. I tried to add it in anyways since I was already too far into the project to change the API.
 async function makeBreweries(data) {
-    const response = await fetch(`${URL}`,
+    const response = await fetch(`${URL}?local`,
         {
             method: 'POST',
             body: JSON.stringify(data),
