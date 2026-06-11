@@ -1,8 +1,12 @@
+import { getNewBrewery } from "./makeBrewery.js";
+
 const citySelect = document.getElementById('city');
 const breweries = document.getElementById('brew_list');
 const brewSearch = document.getElementById('brew_search');
 const searchButton = document.getElementById('search');
-const URL = "https://api.openbrewerydb.org/v1/breweries"
+const newBrewData = document.getElementById("add_brew")
+const submit = document.getElementById('submit')
+export const URL = "https://api.openbrewerydb.org/v1/breweries"
 
 function getCity() {
     const city = citySelect.value.toLowerCase();
@@ -21,6 +25,18 @@ async function getBreweries(city, page) {
     }
 }
 
+async function makeBreweries(data) {
+    const response = await fetch(`${URL}`,
+        {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                "content-type": "application/json"
+            }
+        }).then(response => response.json())
+        .then(data => console.log(data))
+}
+
 function displayBreweries(arr) {
     console.log(arr)
     for (let i = 0; i <arr.length; i++) {
@@ -31,7 +47,13 @@ function displayBreweries(arr) {
         title.textContent = arr[i].name
         const hr = document.createElement('hr')
         const address = document.createElement('p')
-        address.textContent = `${arr[i].address_1}, ${arr[i].city} ${arr[i].postal_code}`
+
+        if (arr[i].address_1 == null){
+            address.textContent = `${arr[i].city} ${arr[i].postal_code}`
+        } else {
+            address.textContent = `${arr[i].address_1}, ${arr[i].city} ${arr[i].postal_code}`
+        }
+
         const phone = document.createElement('p')
         phone.textContent = arr[i].phone
         const link = document.createElement('a')
@@ -60,5 +82,13 @@ brewSearch.addEventListener('click', async (e) => {
         } else {
             displayBreweries(breweriesArr);
          }
+    }
+})
+
+newBrewData.addEventListener('click', (e) => {
+    e.preventDefault()
+    if (e.target == submit) {
+        const data = getNewBrewery()
+        makeBreweries(data);
     }
 })

@@ -70,3 +70,24 @@ hr {
     padding: 20px;
     margin-top: 20px
 }
+
+#add_postal {
+    width: 70px;
+}
+
+#centered {
+    text-align: center;
+    color:#BFBDC1
+}
+
+#add_brew {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: row;
+}
+
+#submit {
+    display: block;
+    width: 100px;
+
+}

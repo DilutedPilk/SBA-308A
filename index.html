@@ -15,11 +15,21 @@
     </nav>
     <main>
         <div id="brew_search">
-            <input type="text" name="city" id="city">
+            <input type="text" name="city" id="city" placeholder="City">
             <button id="search">Search</button>
         </div>
         <hr>
         <div id="brew_list">
+        </div>
+        <p id="centered">Know a brewery you dont see? Upload the info below.</p>
+        <div id="add_brew">
+            <input type="text" name="add_name" id="add_name" placeholder="Name" required>
+            <input type="text" name="add_address" id="add_address" placeholder="Address" required>
+            <input type="text" name="add_city" id="add_city" placeholder="City" required>
+            <input type="text" maxlength="5" name="add_postal" id="add_postal" placeholder="Postal #" required>
+            <input type="url" name="add_website" id="add_website" placeholder="Website">
+            <input type="text" name="add_phone" id="add_phone" placeholder="Phone Number">
+            <button id="submit">submit</button>
         </div>
     </main>
     <script src="./src/script.js" type="module" defer></script>
