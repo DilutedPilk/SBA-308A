@@ -21,21 +21,30 @@ button {
     border: 0px;
     font-size: 20px;
     font-family: Bungee;
-    color: #6D6A75;
+    color: #37323E;
 }
 
 button:hover {
     background-color: #DEB841;
-    color: #37323E;
+}
+main {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+hr {
+    border-color: #6D6A75;
 }
 
 #brew_search {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-#country,
 #city,
 #search {
-    margin: 10px;
+    margin: 20px;
+
+}
+#search {
+    width: 100px
 }
