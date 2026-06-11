@@ -48,3 +48,25 @@ hr {
 #search {
     width: 100px
 }
+
+#brew_list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.breweries {
+    color: #37323E;
+    background-color: #BFBDC1;
+    border-style: solid;
+    border-color: #DE9E36;
+    border-width: 5px;
+    border-radius: 20px;
+    font-size: 20px;
+    width: 300px;
+    height: 250px;
+    padding: 20px;
+    margin-top: 20px
+}
