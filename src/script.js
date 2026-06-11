@@ -52,6 +52,13 @@ brewSearch.addEventListener('click', async (e) => {
         let city = getCity();
         let breweriesArr = await getBreweries(city, 10);
         breweries.innerHTML = ""
-        displayBreweries(breweriesArr);
+        if (breweriesArr.length == 0) {
+            const h1 = document.createElement('h1')
+            h1.textContent = "No breweries found for that city."
+            h1.style.color = "#BFBDC1"
+            breweries.appendChild(h1)
+        } else {
+            displayBreweries(breweriesArr);
+         }
     }
 })
