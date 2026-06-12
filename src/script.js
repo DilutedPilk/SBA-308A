@@ -1,8 +1,8 @@
 import { getNewBrewery } from "./makeBrewery.js";
+import { makeBreweries } from "./postFunction.js";
 
 const citySelect = document.getElementById('city');
 const breweries = document.getElementById('brew_list');
-const brewSearch = document.getElementById('brew_search');
 const searchButton = document.getElementById('search');
 const newBrewData = document.getElementById("add_brew")
 const submit = document.getElementById('submit')
@@ -26,18 +26,7 @@ async function getBreweries(city, page) {
 }
 
 
-//This function doesnt work as the API does not allow the POSt method. I tried to add it in anyways since I was already too far into the project to change the API.
-async function makeBreweries(data) {
-    const response = await fetch(`${URL}?local`,
-        {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                "content-type": "application/json"
-            }
-        }).then(response => response.json())
-        .then(data => console.log(data))
-}
+//This function doesnt work as the API does not allow the POST method. I tried to add it in anyways since I was already too far into the project to change the API.
 
 function displayBreweries(arr) {
     console.log(arr)
