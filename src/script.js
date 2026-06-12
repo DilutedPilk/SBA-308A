@@ -25,9 +25,6 @@ async function getBreweries(city, page) {
     }
 }
 
-
-//This function doesnt work as the API does not allow the POST method. I tried to add it in anyways since I was already too far into the project to change the API.
-
 function displayBreweries(arr) {
     console.log(arr)
     for (let i = 0; i <arr.length; i++) {

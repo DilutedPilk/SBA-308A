@@ -1,7 +1,14 @@
-export const citySelect = document.getElementById('city');
-export const breweries = document.getElementById('brew_list');
-export const brewSearch = document.getElementById('brew_search');
-export const searchButton = document.getElementById('search');
-export const newBrewData = document.getElementById("add_brew")
-export const submit = document.getElementById('submit')
-export const URL = "https://api.openbrewerydb.org/v1/breweries"
+import { URL } from "./script"
+
+//This function doesnt work as the API does not allow the POST method. I tried to add it in anyways since I was already too far into the project to change the API.
+export async function makeBreweries(data) {
+    const response = await fetch(`${URL}?local`,
+        {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                "content-type": "application/json"
+            }
+        }).then(response => response.json())
+        .then(data => console.log(data))
+}
