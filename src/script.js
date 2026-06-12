@@ -1,6 +1,7 @@
 import { getNewBrewery } from "./makeBrewery.js";
-import { makeBreweries } from "./postFunction.js";
+// import { makeBreweries } from "./postFunction.js";
 
+const brewSearch = document.getElementById('brew_search');
 const citySelect = document.getElementById('city');
 const breweries = document.getElementById('brew_list');
 const searchButton = document.getElementById('search');
@@ -77,6 +78,6 @@ newBrewData.addEventListener('click', (e) => {
     e.preventDefault()
     if (e.target == submit) {
         const data = getNewBrewery()
-        makeBreweries(data);
+        console.log(data);
     }
 })
